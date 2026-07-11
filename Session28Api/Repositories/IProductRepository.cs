@@ -1,0 +1,16 @@
+using Session28Api.Entities;
+
+namespace Session28Api.Repositories;
+
+public interface IProductRepository
+{
+    Task<List<Product>> GetAllAsync();
+
+    Task<Product?> GetByIdAsync(int id);
+
+    Task AddAsync(Product product);
+
+    Task DeleteAsync(Product product);
+
+    Task SaveChangesAsync();
+}
