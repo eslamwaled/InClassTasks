@@ -1,0 +1,50 @@
+@Session27Api_HostAddress = http://localhost:5118
+@token = paste_jwt_here
+
+###
+
+POST {{Session27Api_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "user@session27.com",
+  "userName": "regularuser",
+  "password": "User@12345"
+}
+
+###
+
+POST {{Session27Api_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@session27.com",
+  "password": "Admin@12345"
+}
+
+###
+
+GET {{Session27Api_HostAddress}}/api/admin/users
+Authorization: Bearer {{token}}
+
+###
+
+GET {{Session27Api_HostAddress}}/api/products
+
+###
+
+POST {{Session27Api_HostAddress}}/api/products
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Headset",
+  "price": 89.99
+}
+
+###
+
+DELETE {{Session27Api_HostAddress}}/api/products/1
+Authorization: Bearer {{token}}
+
+###
