@@ -1,0 +1,6 @@
+@Session26Api_HostAddress = http://localhost:5262
+
+GET {{Session26Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
